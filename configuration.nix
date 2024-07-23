@@ -22,6 +22,7 @@
   # Virtualisation
 
   virtualisation.containers.enable = true;
+  virtualisation.docker.rootless.enable = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -68,10 +69,15 @@
   #};
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
+
+
+  hardware.cpu.amd.updateMicrocode = true;
+
+
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
