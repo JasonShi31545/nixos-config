@@ -5,33 +5,33 @@
   home.username = "jason";
   home.homeDirectory = "/home/jason";
 
-  home.packages = [
-    pkgs.neofetch
-    pkgs.distrobox
-    pkgs.podman
-    pkgs.docker
-    pkgs.foot
-    pkgs.pcmanfm
-    pkg.gh
-    pkg.lxappearance
-    pkg.tldr
-    pkg.mpv
-    pkg.btrfs-progs
-    pkg.networkmanagerapplet
-    pkg.rsync
-    pkg.fd-find
-    pkg.editorconfig
-    pkg.ripgrep
-    pkg.wdisplays
-    pkg.wlr-randr
-    pkg.wl-clipboard
-    pkg.gparted
-
-    pkg.conky
-    pkg.rofi-wayland
-    pkg.swaylock
-
-
+  home.packages = with pkgs; [
+    neofetch
+    distrobox
+    podman
+    docker
+    foot
+    pcmanfm
+    gh
+    lxappearance
+    tldr
+    mpv
+    btrfs-progs
+    networkmanagerapplet
+    rsync
+    fd-find
+    editorconfig
+    ripgrep
+    wdisplays
+    wlr-randr
+    wl-clipboard
+    gparted
+    grim
+    sway-contrib.grimshot
+    conky
+    rofi-wayland
+    swaylock
+    fira-code
   ];
 
   programs.home-manager.enable = true;
@@ -40,7 +40,7 @@
 
   programs.waybar.enable = true;
 
-  programs.sway.package = "pkg.swayfx";
+  programs.sway.package = "swayfx";
   programs.sway.enable = true;
 
   programs.neovim.vimAlias = true;
@@ -79,6 +79,8 @@
 
   security.polkit.enable = true;
   security.polkit.debug = true;
+
+  services.dbus.enable = true;
 
   services.btrfs.autoScrub.enable = true;
 
