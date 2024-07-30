@@ -19,7 +19,7 @@
 ##    gh
     lxappearance
     tldr
-    mpv
+##    mpv
     btrfs-progs
 ##    networkmanagerapplet
     rsync
@@ -78,6 +78,10 @@
     extraConfig = ''
 
     '';
+  };
+
+  programs.mpv = {
+    enable = true;
   };
 
   programs.neovim.vimAlias = true;
