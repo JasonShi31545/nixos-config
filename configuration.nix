@@ -32,6 +32,8 @@
 
   virtualisation.containers.enable = true;
   virtualisation.docker.rootless.enable = true;
+ 
+  virtualisation.libvirtd.enable = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -107,7 +109,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jason = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     initialPassword = "default";
   };
 
