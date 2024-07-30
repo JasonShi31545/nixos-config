@@ -21,7 +21,7 @@
     tldr
     mpv
     btrfs-progs
-    networkmanagerapplet
+##    networkmanagerapplet
     rsync
     fd-find
     ripgrep
@@ -66,6 +66,10 @@
   };
 
   programs.rofi = {
+    enable = true;
+  };
+
+  services.network-manager-applet = {
     enable = true;
   };
 
