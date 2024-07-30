@@ -10,18 +10,13 @@
   home.homeDirectory = "/home/jason";
 
   home.packages = with pkgs; [
-##    neofetch
     distrobox
     podman
     docker
-##    foot
     pcmanfm
-##    gh
     lxappearance
     tldr
-##    mpv
     btrfs-progs
-##    networkmanagerapplet
     rsync
     fd-find
     ripgrep
@@ -31,9 +26,6 @@
     gparted
     grim
     sway-contrib.grimshot
-##    conky
-##    rofi-wayland
-##    swaylock
     fira-code
   ];
 
@@ -77,6 +69,10 @@
     enable = true;
   };
 
+  services.kanshi = {
+    enable = true;
+  };
+
   services.conky = {
     enable = true;
     extraConfig = ''
@@ -85,6 +81,10 @@
   };
 
   programs.mpv = {
+    enable = true;
+  };
+
+  programs.imv = {
     enable = true;
   };
 
