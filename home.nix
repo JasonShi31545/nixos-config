@@ -27,6 +27,7 @@
     grim
     sway-contrib.grimshot
     fira-code
+    light
   ];
 
   home.sessionVariables = {
