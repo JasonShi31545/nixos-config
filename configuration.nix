@@ -2,7 +2,8 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, ... }:
+#{ pkgs, inputs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
 
@@ -10,6 +11,13 @@
     ./hardware-configuration.nix
     home-manager.nixosModules.default
   ];
+
+  home-manager = {
+      extraSpecialArgs = { inherit inputs; };
+      users = {
+        jason = import ./home.nix;
+      };
+  };
 
   # Bootloader.
   boot.loader.grub.enable = true;
