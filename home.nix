@@ -73,6 +73,10 @@
     enable = true;
   };
 
+  services.dunst = {
+    enable = true;
+  };
+
   services.conky = {
     enable = true;
     extraConfig = ''
