@@ -125,15 +125,17 @@
 
   services.printing.enable = true;
 
-  programs.emacs = {
-    enable = true;
+## NAH, put emacs under container, easier since doom is already declarative anyways
 
-  };
-  services.emacs = {
-    enable = true;
-    startWithGraphical = true;
-    ##install = true;
-  };
+##  programs.emacs = {
+##    enable = true;
+##
+##  };
+##  services.emacs = {
+##    enable = true;
+##    startWithGraphical = true;
+##    ##install = true;
+##  };
 
   editorconfig = {
     enable = true;
@@ -176,11 +178,9 @@
       "l" = "ls --color=auto"
       "e" = "vim"
       "rm" = "rm -i"
-      "c" = "emacsclient -t"
     };
     bashrcExtra = ''
       export PS1="──[\[\e[01;32m\]\u\[\e[00m\]@\[\e[01;32m\]\h\[\e[00m\]:\[\e[1;34m\]\W\[\e[0m\]]─╼ "
-      export PATH="~/.config/emacs/bin:$PATH"
       export PATH="~/.local/bin:$PATH"
       export HISTCONTROL=erasedups:ignoreboth
       [ -f "/home/jason/.ghcup/env" ] && . "/home/jason/.ghcup/env" # ghcup-env
