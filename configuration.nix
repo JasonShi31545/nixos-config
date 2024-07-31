@@ -79,8 +79,6 @@
   #  xkbVariant = "";
   #};
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -132,6 +130,7 @@
   programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
+    enableBrowserSocket = true;
     enableSSHSupport = true;
   };
 

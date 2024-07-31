@@ -11,6 +11,7 @@
 
   home.packages = with pkgs; [
     distrobox
+    boxbuddy
     podman
     docker
     pcmanfm
@@ -31,9 +32,8 @@
   ];
 
   home.sessionVariables = {
-    EDITOR = "nvim";
-
   };
+
   home.file = {
   };
 
@@ -227,9 +227,6 @@
       iconTheme.name = "nuoveXT2";
   };
 
-  programs.gnupg.agent.enable = true;
-  programs.gnupg.agent.enableBrowserSocket = true;
-  programs.gnupg.agent.enableSSHSupport = true;
 
   # xdg
   xdg = {
