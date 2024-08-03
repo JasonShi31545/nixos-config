@@ -1,0 +1,3 @@
+[submodule "dotfiles/doomemacs"]
+	path = dotfiles/doomemacs
+	url = https://github.com/JasonShi31545/doomemacs-config.git

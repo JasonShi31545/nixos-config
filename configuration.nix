@@ -28,6 +28,9 @@
   # sysrq
   boot.kernel.sysctl."kernel.sysrq" = 502;
 
+  # swappiness
+  boot.kernel.sysctl."vm.swappiness" = 5;
+
   # Virtualisation
 
   virtualisation.containers.enable = true;
@@ -66,18 +69,19 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
+  i18n.inputMethod.enabled = "ibus";
+
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  #services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
-
   # Configure keymap in X11
   #services.xserver = {
   #  layout = "us";
   #  xkbVariant = "";
   #};
+
+  # Dynamic Linking (not recommended)
+  # programs.nix-ld.enable = true;
+  # programs.nix-ld.libraries = with pkgs; [];
 
 
   # Enable sound with pipewire.
@@ -153,7 +157,16 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
+
+  # Auto update? Nah
+  system.autoUpgrade = {
+    enable = false;
+    # flake = inputs.self.outPath;
+    # flags = [];
+    # dates = "";
+    # randomizedDelaySec = "45min";
+  };
+
   # enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
 }

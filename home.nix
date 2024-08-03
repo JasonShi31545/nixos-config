@@ -26,18 +26,32 @@
     wl-clipboard
     gparted
     grim
+    slurp
     sway-contrib.grimshot
     fira-code
+    nerdfonts
     light
   ];
 
   home.sessionVariables = {
   };
 
+  # Put all the paths of the sources of my configuration files in this setting.
   home.file = {
+      "~/.gitconfig".source = ./dotfiles/git/gitconfig;
+      "~/.config/conky/conky.conf".source = ./dotfiles/conky/conky.conf;
+      "~/.config/foot/foot.ini".source = ./dotfiles/foot/foot.ini;
+      "~/.config/nvim/init.vim".source = ./dotfiles/nvim/init.vim;
+      "~/.config/rofi/config.rasi".source = ./dotfiles/rofi/config.rasi;
+      "~/.config/sway/config".source = ./dotfiles/sway/config;
+      "~/.config/swaylock/config".source = ./dotfiles/swaylock/config;
+      "~/.config/waybar/config".source = ./dotfiles/waybar/config;
+      "~/.config/waybar/style.css".source = ./dotfiles/waybar/style.css;
+      "~/.Xdefaults".source = ./dotfiles/X/Xdefaults;
+      "~/.Xresources".source = ./dotfiles/X/Xresources;
   };
 
-  program.fastfetch.enable = true;
+  programs.fastfetch.enable = true;
 
   programs.home-manager.enable = true;
 
@@ -47,12 +61,10 @@
     enable = true;
   };
 
-  program.sway = {
-    package = "swayfx";
+  programs.sway = {
+    package = pkg.swayfx;
     enable = true;
   };
-  programs.sway.package = "swayfx";
-  programs.sway.enable = true;
 
   programs.swaylock = {
     enable = true;
@@ -182,6 +194,10 @@
     };
   };
 
+  programs.urxvt = {
+    enable = true;
+  };
+
   programs.autojump = {
     enable = true;
     enableBashIntegration = true;
@@ -200,12 +216,13 @@
       "l" = "ls --color=auto"
       "e" = "vim"
       "rm" = "rm -i"
+      "mv" = "mv -i"
+      "cp" = "cp -i"
     };
     bashrcExtra = ''
       export PS1="──[\[\e[01;32m\]\u\[\e[00m\]@\[\e[01;32m\]\h\[\e[00m\]:\[\e[1;34m\]\W\[\e[0m\]]─╼ "
       export PATH="~/.local/bin:$PATH"
       export HISTCONTROL=erasedups:ignoreboth
-      [ -f "/home/jason/.ghcup/env" ] && . "/home/jason/.ghcup/env" # ghcup-env
     ''
   };
 
