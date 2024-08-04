@@ -90,6 +90,7 @@
 
   hardware.cpu.amd.updateMicrocode = true;
 
+  security.polkit.enable = true;
 
   security.rtkit.enable = true;
   services.pipewire = {
