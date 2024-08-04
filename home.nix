@@ -30,7 +30,6 @@
     sway-contrib.grimshot
     fira-code
     nerdfonts
-    light
   ];
 
   home.sessionVariables = {
@@ -61,10 +60,21 @@
     enable = true;
   };
 
-  programs.sway = {
+
+  programs.light = {
+    enable = true;
+  };
+
+  wayland.windowManager.sway = {
     package = pkg.swayfx;
     enable = true;
   };
+
+  #programs.sway = {
+  #  package = pkg.swayfx;
+  #  enable = true;
+  #  wrapperFeatuers.gtk = true;
+  #};
 
   programs.swaylock = {
     enable = true;
