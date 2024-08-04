@@ -278,7 +278,8 @@ titlebar_separator disable
 default_dim_inactive 0.1
 
 input * {
-    xkb_options "caps:ctrl_modifier"
+    xkb_options "caps:ctrl_modifier,grp:ctrls_toggle"
+    xkb_layout us,us(intl)
 }
 
 output * bg ../resources/monaco.jpg fill
