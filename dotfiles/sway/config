@@ -281,7 +281,7 @@ input * {
     xkb_options "caps:ctrl_modifier"
 }
 
-output * bg ~/media/monaco.jpg fill
+output * bg ../resources/monaco.jpg fill
 
 # exec_always killall swayidle
 # exec_always swayidle -w \
