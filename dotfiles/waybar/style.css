@@ -274,13 +274,13 @@ label:focus {
 
 #idle_inhibitor {
     border-radius: 10px;
-    background-color: #aa9999;
+    background-color: #223399;
     margin: 0 5px;
 }
 
 #idle_inhibitor.activated {
     border-radius: 10px;
-    background-color: #ffffff;
+    background-color: #88ffff;
     color: #2d3436;
     margin: 0 5px;
 }
