@@ -19,7 +19,6 @@
     tldr
     btrfs-progs
     rsync
-    fd-find
     ripgrep
     wdisplays
     wlr-randr
@@ -37,37 +36,41 @@
 
   # Put all the paths of the sources of my configuration files in this setting.
   home.file = {
-      "~/.gitconfig".source = ./dotfiles/git/gitconfig;
-      "~/.config/conky/conky.conf".source = ./dotfiles/conky/conky.conf;
-      "~/.config/foot/foot.ini".source = ./dotfiles/foot/foot.ini;
-      "~/.config/nvim/init.vim".source = ./dotfiles/nvim/init.vim;
-      "~/.config/rofi/config.rasi".source = ./dotfiles/rofi/config.rasi;
-      "~/.config/sway/config".source = ./dotfiles/sway/config;
-      "~/.config/swaylock/config".source = ./dotfiles/swaylock/config;
-      "~/.config/waybar/config".source = ./dotfiles/waybar/config;
-      "~/.config/waybar/style.css".source = ./dotfiles/waybar/style.css;
-      "~/.Xdefaults".source = ./dotfiles/X/Xdefaults;
-      "~/.Xresources".source = ./dotfiles/X/Xresources;
+      ".gitconfig".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/git/gitconfig;
+      ".config/conky/conky.conf".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/conky/conky.conf;
+      ".config/foot/foot.ini".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/foot/foot.ini;
+      ".config/nvim/init.vim".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/nvim/init.vim;
+      ".config/rofi/config.rasi".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/rofi/config.rasi;
+      ".config/sway/config.ref".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/sway/config;
+      ".config/swaylock/config".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/swaylock/config;
+      ".config/waybar/config".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/waybar/config;
+      ".config/waybar/style.css".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/waybar/style.css;
+      ".Xdefaults".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/X/Xdefaults;
+      ".Xresources".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/X/Xresources;
   };
 
   programs.fastfetch.enable = true;
 
   programs.home-manager.enable = true;
 
-  documentation.info.enable = true;
+
+  dconf.settings = {
+    "org/virt-manager/virt-manager/connections" = {
+      autoconnect = ["qemu:///system"];
+      uris = ["qemu:///system"];
+    };
+  };
 
   programs.waybar = {
     enable = true;
   };
 
 
-  programs.light = {
-    enable = true;
-  };
 
   wayland.windowManager.sway = {
-    package = pkg.swayfx;
+    #package = pkgs.swayfx;
     enable = true;
+    extraConfigEarly = "include ~/.config/sway/config.ref";
   };
 
   #programs.sway = {
@@ -82,6 +85,7 @@
 
   programs.rofi = {
     enable = true;
+    configPath = ".bad/rofi-backup/config.rasi";
   };
 
   services.network-manager-applet = {
@@ -137,37 +141,21 @@
 
   programs.htop.enable = true;
 
+  programs.fd = { enable = true; };
+
   programs.tmux = {
     enable = true;
     keyMode = "emacs";
     extraConfig = ''
       set -g mouse on
     '';
-  }
-
-
-  programs.virt-manager.enable = true;
-  programs.dconf.enable = true;
-
-  dconf.settings = {
-    "org/virt-manager/virt-manager/connections" = {
-      autoconnect = ["qemu:///system"];
-      uris = ["qemu:///system"];
-    };
   };
 
 
-  services.flatpak.enable = true;
 
 
-  security.polkit.enable = true;
-  security.polkit.debug = true;
 
-  services.dbus.enable = true;
 
-  services.btrfs.autoScrub.enable = true;
-
-  services.printing.enable = true;
 
 ## NAH, put emacs under container, easier since doom is already declarative anyways
 
@@ -189,7 +177,7 @@
         indent_size = 4;
         trim_trailing_whitespace = true;
         insert_final_newline = true;
-      }
+      };
       "Makefile" = {
         indent_style = "tab";
       };
@@ -219,21 +207,21 @@
     enable = true;
     enableCompletion = true;
     shellAliases = {
-      "ls" = "ls --color=auto"
-      "grep" = "grep --color=auto"
-      "ll" = "ls --color=auto -l"
-      "la" = "ls --color=auto -a"
-      "l" = "ls --color=auto"
-      "e" = "vim"
-      "rm" = "rm -i"
-      "mv" = "mv -i"
-      "cp" = "cp -i"
+      "ls" = "ls --color=auto";
+      "grep" = "grep --color=auto";
+      "ll" = "ls --color=auto -l";
+      "la" = "ls --color=auto -a";
+      "l" = "ls --color=auto";
+      "e" = "vim";
+      "rm" = "rm -i";
+      "mv" = "mv -i";
+      "cp" = "cp -i";
     };
     bashrcExtra = ''
       export PS1="──[\[\e[01;32m\]\u\[\e[00m\]@\[\e[01;32m\]\h\[\e[00m\]:\[\e[1;34m\]\W\[\e[0m\]]─╼ "
       export PATH="~/.local/bin:$PATH"
       export HISTCONTROL=erasedups:ignoreboth
-    ''
+    '';
   };
 
   programs.gh = {
@@ -255,21 +243,10 @@
   };
 
 
+  xresources.path = ".bad/.Xresources.bak";
+
   # xdg
   xdg = {
-    portal.enable = true;
-    terminal-exec.enable = true;
-    terminal-exec.settings = {
-        default = [
-          "footclient"
-        ];
-    };
-    portal.xdgOpenUsePortal = true;
-    portal.wlr.enable = true;
-    mimeApps.defaultApplications = {
-        "image/*" = ["imv-wayland"];
-        "video/*" = ["mpv.desktop"];
-    };
 
     userDirs.enable = true;
     userDirs.desktop = "${config.home.homeDirectory}/desk";

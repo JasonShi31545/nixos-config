@@ -10,7 +10,7 @@
   };
 
   ## outputs = inputs@{ self, nixpkgs, home-manager, ... }:
-  outputs = { self, nixpkgs, ...}@inputs:
+  outputs = { self, nixpkgs, home-manager, ...}@inputs:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs {

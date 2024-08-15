@@ -251,7 +251,7 @@ gaps outer 1
 
 #for_window [class="^.*"] border pixel 2
 #default_border none
-default_border pixel 3
+#default_border pixel 3
 
 #client.focused "#872121" "#872121" "#ffffff" "#ff2222" "#872121"
 client.focused "#00004D" "#00004D" "#ffffff" "#15358D" "#00004D"
@@ -267,15 +267,15 @@ for_window [class="thunderbird"] opacity 0.97
 for_window [class="footclient"] opacity 0.97
 for_window [app_id="foot"] opacity 0.97
 
-corner_radius 8
-blur enable
-blur_xray disable
-blur_radius 3
-shadows enable
-shadow_blur_radius 20
-layer_effects "waybar" blur enable;# shadows enable;
-titlebar_separator disable
-default_dim_inactive 0.1
+#corner_radius 8
+#blur enable
+#blur_xray disable
+#blur_radius 3
+#shadows enable
+#shadow_blur_radius 20
+#layer_effects "waybar" blur enable;# shadows enable;
+#titlebar_separator disable
+#default_dim_inactive 0.1
 
 input * {
     xkb_options "caps:ctrl_modifier,grp:ctrls_toggle"

@@ -14,6 +14,7 @@
 
   home-manager = {
       extraSpecialArgs = { inherit inputs; };
+      backupFileExtension = "bak";
       users = {
         jason = import ./home.nix;
       };
@@ -87,10 +88,69 @@
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
 
+  # Docs
+
+  documentation.info.enable = true;
+
+  # Dconf
+  programs.dconf.enable = true;
+
+  # Virt-manager
+  programs.virt-manager.enable = true;
+
+
+  # light
+  programs.light = {
+    enable = true;
+  };
+
+  # polkit
+  security.polkit.enable = true;
+  security.polkit.debug = true;
+
+  # sudo
+  security.sudo.configFile = ''
+  Defaults	env_reset,timestamp_timeout=-1
+  Defaults	mail_badpass
+  Defaults	use_pty
+  Defaults	!tty_tickets
+  root	ALL=(ALL:ALL)	SETENV: ALL
+  %wheel	ALL=(ALL:ALL)	SETENV:ALL
+  Defaults:root,%wheel env_keep+=TERMINFO_DIRS
+  Defaults:root,%wheel env_keep+=TERMINFO
+  '';
+
+  # btrfs
+  #services.btrfs.autoScrub.enable = true;
+
+
+  services.dbus.enable = true;
+  services.printing.enable = true;
+
+  # xdg
+  xdg = {
+    portal.enable = true;
+    #portals.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    terminal-exec.enable = true;
+    terminal-exec.settings = {
+        default = [
+          "footclient"
+        ];
+    };
+    portal.xdgOpenUsePortal = true;
+    portal.wlr.enable = true;
+    mime.defaultApplications = {
+        "image/*" = ["imv-wayland"];
+        "video/*" = ["mpv.desktop"];
+    };
+  };
+
+  # flatpak
+  services.flatpak.enable = true;
+
+
 
   hardware.cpu.amd.updateMicrocode = true;
-
-  security.polkit.enable = true;
 
   security.rtkit.enable = true;
   services.pipewire = {
