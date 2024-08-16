@@ -41,7 +41,7 @@
       ".config/foot/foot.ini".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/foot/foot.ini;
       ".config/nvim/init.vim".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/nvim/init.vim;
       ".config/rofi/config.rasi".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/rofi/config.rasi;
-      ".config/sway/config.ref".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/sway/config;
+      #".config/sway/config.ref".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/sway/config;
       ".config/swaylock/config".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/swaylock/config;
       ".config/waybar/config".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/waybar/config;
       ".config/waybar/style.css".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/waybar/style.css;
@@ -70,7 +70,7 @@
   wayland.windowManager.sway = {
     #package = pkgs.swayfx;
     enable = true;
-    extraConfigEarly = "include ~/.config/sway/config.ref";
+    #extraConfigEarly = "include ~/.config/sway/config.ref";
   };
 
   #programs.sway = {
@@ -259,6 +259,8 @@
     userDirs.publicShare = "${config.home.homeDirectory}/pub";
 
   };
+
+  xdg.configFile."sway/config".source = pkgs.lib.mkOverride 0 "./dotfiles/sway/config";
 
 
 
