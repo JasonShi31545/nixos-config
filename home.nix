@@ -51,6 +51,7 @@
 
   programs.fastfetch.enable = true;
 
+  fonts.fontconfig.enable = true;
   programs.home-manager.enable = true;
 
 
