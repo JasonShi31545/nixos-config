@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo nixos-generate-config --show-hardware-config > hardware-configuration.nix
+sudo nixos-generate-config --show-hardware-config > ./hardware/default-hardware.nix

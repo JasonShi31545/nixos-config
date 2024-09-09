@@ -8,7 +8,7 @@
 {
 
   imports = with inputs; [
-    ./hardware-configuration.nix
+    ./hardware/default-hardware.nix
     home-manager.nixosModules.default
   ];
 
