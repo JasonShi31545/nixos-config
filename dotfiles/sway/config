@@ -240,8 +240,8 @@ bindsym $mod+Alt+Shift+Print exec grimshot save output
 # the trick, it's all in the `wordexp(3)`.
 #
 
-exec_always foot -s
-exec_always conky -d
+exec foot -s
+exec conky -d
 exec waybar
 #exec_always wlr-randr --output eDP-1 --off
 #exec_always ibus-daemon
