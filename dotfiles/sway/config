@@ -251,12 +251,20 @@ gaps outer 1
 
 #for_window [class="^.*"] border pixel 2
 #default_border none
-#default_border pixel 3
+default_border pixel 3
 
 #client.focused "#872121" "#872121" "#ffffff" "#ff2222" "#872121"
 client.focused "#00004D" "#00004D" "#ffffff" "#15358D" "#00004D"
 
+#smart_gaps on
+smart_borders on
+hide_edge_borders both
+#titlebar_border_thickness 1
+#titlebar_padding 0
+for_window [class="^.*"] title_format "%title <i>%class</i> %instance %shell"
+
 # Transparency / Opacity
+for_window [class="^.*"] opacity 0.98
 for_window [class="Firefox-esr"] opacity 0.97
 for_window [app_id="emacs"] opacity 0.97
 for_window [class="Emacs"] opacity 0.97
