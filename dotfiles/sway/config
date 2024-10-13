@@ -261,7 +261,8 @@ smart_borders on
 hide_edge_borders both
 #titlebar_border_thickness 1
 #titlebar_padding 0
-for_window [class="^.*"] title_format "%title <i>%class</i> %instance %shell"
+#for_window [class="^.*"] title_format "%title <i>%class</i> %instance %shell"
+for_window [class="^.*"] title_format "%title : %class , %instance , %shell"
 
 # Transparency / Opacity
 for_window [class="^.*"] opacity 0.98
