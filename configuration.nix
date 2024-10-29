@@ -22,11 +22,13 @@
 
   # Bootloader.
   boot.loader.grub.enable = true;
-  boot.loader.systemd-boot.enable = true;
+  #boot.loader.systemd-boot.enable = true;
+  boot.loader.grub.version = 2;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.device = "nodev";
   #boot.loader.grub.device = "/dev/vda";
   boot.loader.grub.useOSProber = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   # sysrq
   boot.kernel.sysctl."kernel.sysrq" = 502;
