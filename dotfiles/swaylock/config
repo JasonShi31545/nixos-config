@@ -1,4 +1,4 @@
 
-image=../resources/santorini.jpg
+image=~/nix/nixos-config/dotfiles/resources/santorini.jpg
 # image=~/Pictures/get_away.png
 scaling=fill
