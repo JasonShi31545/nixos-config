@@ -228,6 +228,12 @@
   # Or disable the firewall altogether.
   networking.firewall.enable = true;
 
+  # OpenGL
+
+  hardware.opengl = {
+    enable = true;
+    package = (pkgs.mesa.override { galliumDrivers = [ "i915" ]; }).drivers;
+  }
 
   # Systemd configs
 
