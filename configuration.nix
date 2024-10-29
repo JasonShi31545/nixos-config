@@ -233,7 +233,7 @@
   hardware.opengl = {
     enable = true;
     package = (pkgs.mesa.override { galliumDrivers = [ "i915" ]; }).drivers;
-  }
+  };
 
   # Systemd configs
 
