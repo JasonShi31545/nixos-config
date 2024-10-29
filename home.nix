@@ -261,7 +261,7 @@
 
   };
 
-  xdg.configFile."sway/config".source = pkgs.lib.mkOverride 0 "./dotfiles/sway/config";
+  xdg.configFile."sway/config".source = pkgs.lib.mkForce ./dotfiles/sway/config;
 
 
 
