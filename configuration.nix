@@ -33,13 +33,13 @@
 
   # luks
 
-  boot.initrd.luks.devices = {
-    luksroot = {
-      device = "/dev/disk/by-uuid/place-holder-uuid-for-root-cryptsetup-partition";
-      preLVM = true;
-      allowDiscards = true;
-    };
-  };
+  #boot.initrd.luks.devices = {
+  #  luksroot = {
+  #    device = "/dev/disk/by-uuid/place-holder-uuid-for-root-cryptsetup-partition";
+  #    preLVM = true;
+  #    allowDiscards = true;
+  #  };
+  #};
 
   # FS
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
