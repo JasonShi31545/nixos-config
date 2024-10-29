@@ -39,7 +39,7 @@
       ".gitconfig".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/git/gitconfig;
       ".config/conky/conky.conf".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/conky/conky.conf;
       ".config/foot/foot.ini".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/foot/foot.ini;
-      ".config/nvim/init.vim".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/nvim/init.vim;
+      #".config/nvim/init.vim".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/nvim/init.vim;
       ".config/rofi/config.rasi".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/rofi/config.rasi;
       #".config/sway/config.ref".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/sway/config;
       ".config/swaylock/config".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/swaylock/config;
