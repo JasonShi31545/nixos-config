@@ -31,6 +31,14 @@
   #boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.gfxmodeEfi = "1024x768";
 
+  # luks
+
+  boot.initrd.luks.devices = {
+    luksroot = {
+      device = "/dev/disk/by-uuid/place-holder-uuid-for-root-cryptsetup-partition";
+    };
+  };
+
   # FS
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
