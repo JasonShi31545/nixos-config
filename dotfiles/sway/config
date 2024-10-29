@@ -291,7 +291,7 @@ input * {
     xkb_layout us,us(intl)
 }
 
-output * bg ../resources/monaco.jpg fill
+output * bg ~/nix/nixos-config/dotfiles/resources/monaco.jpg fill
 
 # exec_always killall swayidle
 # exec_always swayidle -w \
