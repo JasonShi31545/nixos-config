@@ -27,6 +27,9 @@ set $term footclient
 #set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 set $menu rofi -font "CaskaydiaMono NF 12" -show drun
 
+#font
+font pango:"CaskaydiaMono NF" Regular 10
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
