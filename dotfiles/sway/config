@@ -25,7 +25,7 @@ set $term footclient
 # Shows a combined list of the applications with desktop files and
 # executables from PATH.
 #set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
-set $menu rofi -show drun
+set $menu rofi -font "CaskaydiaMono NF 12" -show drun
 
 ### Output configuration
 #
