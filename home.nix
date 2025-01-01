@@ -27,6 +27,7 @@
     grim
     slurp
     sway-contrib.grimshot
+    shadowsocks-rust
   ];
 
   home.sessionVariables = {
