@@ -20,6 +20,7 @@
     btrfs-progs
     rsync
     ripgrep
+    openvpn3
     wdisplays
     wlr-randr
     wl-clipboard
