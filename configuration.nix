@@ -233,8 +233,7 @@
     mplus-outline-fonts.githubRelease
     dina-font
     proggyfonts
-    nerdfonts
-  ];
+  ] ++ builtins.filter pkgs.lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   # Enable Swaylock
   security.pam.services.swaylock = {};
