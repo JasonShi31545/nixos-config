@@ -28,7 +28,6 @@
     grim
     slurp
     sway-contrib.grimshot
-    fira-code
   ];
 
   home.sessionVariables = {
