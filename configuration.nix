@@ -222,6 +222,9 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = false;
 
+  # Enable Nerd Fonts
+  fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts)
+
   # Enable Swaylock
   security.pam.services.swaylock = {};
 

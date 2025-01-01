@@ -29,7 +29,6 @@
     slurp
     sway-contrib.grimshot
     fira-code
-    nerdfonts
   ];
 
   home.sessionVariables = {
