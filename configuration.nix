@@ -220,7 +220,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = false;
 
   # Enable Swaylock
   security.pam.services.swaylock = {};
