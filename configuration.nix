@@ -106,6 +106,8 @@
   # programs.nix-ld.enable = true;
   # programs.nix-ld.libraries = with pkgs; [];
 
+  # gnome-keyring
+  services.gnome.gnome-keyring.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -152,7 +154,7 @@
   # xdg
   xdg = {
     portal.enable = true;
-    #portals.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     terminal-exec.enable = true;
     terminal-exec.settings = {
         default = [

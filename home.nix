@@ -25,6 +25,9 @@
     wl-clipboard
     gparted
     grim
+    mako
+    killall
+    xorg.xkill
     slurp
     sway-contrib.grimshot
     shadowsocks-rust
@@ -70,6 +73,7 @@
   wayland.windowManager.sway = {
     #package = pkgs.swayfx;
     enable = true;
+    wrapperFeatures.gtk = true;
     #extraConfigEarly = "include ~/.config/sway/config.ref";
   };
 
