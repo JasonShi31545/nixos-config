@@ -27,7 +27,6 @@
     grim
     mako
     killall
-    xorg.xkill
     slurp
     sway-contrib.grimshot
     shadowsocks-rust
