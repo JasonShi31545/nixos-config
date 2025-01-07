@@ -15,7 +15,7 @@
     podman
     docker
     pcmanfm
-    lxappearance
+    #lxappearance
     tldr
     btrfs-progs
     rsync
