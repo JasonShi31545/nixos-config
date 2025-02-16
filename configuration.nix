@@ -113,7 +113,10 @@
   hardware.pulseaudio.enable = false;
 
   # Enable OpenTabletDriver
-  hardware.opentabletdriver.enable = true;
+  hardware.opentabletdriver = {
+    enable = true;
+    daemon.enable = true;
+  };
 
   # Docs
 
