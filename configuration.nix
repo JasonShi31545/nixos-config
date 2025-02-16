@@ -112,6 +112,9 @@
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
 
+  # Enable OpenTabletDriver
+  hardware.opentabletdriver.enable = true;
+
   # Docs
 
   documentation.info.enable = true;
