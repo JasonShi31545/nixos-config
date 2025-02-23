@@ -118,6 +118,15 @@
     daemon.enable = true;
   };
 
+  # Enable Bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
+  services.blueman.enable = true;
+
+
   # Docs
 
   documentation.info.enable = true;
