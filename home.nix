@@ -175,7 +175,7 @@
   editorconfig = {
     enable = true;
     settings = {
-      "*.{c,cc,cpp,cxx,py,s,asm}" = {
+      "*.{c,cc,cpp,cxx,py,s,asm,h,hpp}" = {
         indent_style = "space";
         indent_size = 4;
         trim_trailing_whitespace = true;
