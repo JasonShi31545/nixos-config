@@ -203,6 +203,9 @@
   SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", MODE:="0660", GROUP="input", TAG+="uaccess"
   '';
 
+  # enable Wooting
+  hardware.wooting.enable = true;
+
   hardware.cpu.amd.updateMicrocode = true;
 
   security.rtkit.enable = true;
