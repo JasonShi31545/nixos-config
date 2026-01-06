@@ -92,7 +92,8 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  i18n.inputMethod.enabled = "ibus";
+  i18n.inputMethod.enable = true;
+  i18n.inputMethod.type = "ibus";
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
@@ -110,7 +111,7 @@
   services.gnome.gnome-keyring.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 
   # Enable OpenTabletDriver
   hardware.opentabletdriver = {
@@ -168,6 +169,7 @@
 
   # xdg
   xdg = {
+    portal.config.common.default = "*";
     portal.enable = true;
     portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     terminal-exec.enable = true;
@@ -259,7 +261,7 @@
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     liberation_ttf
     fira-code
     fira-code-symbols
@@ -280,15 +282,15 @@
 
   # OpenGL
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
   #  package = (pkgs.mesa.override { galliumDrivers = [ "i915" ]; }).drivers;
   };
 
   # Systemd configs
   systemd.settings.Manager = {
-    DefaultTimeoutStopSec="10s"
-  }
+    DefaultTimeoutStopSec="10s";
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

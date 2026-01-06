@@ -31,8 +31,8 @@
     sway-contrib.grimshot
     shadowsocks-rust
     # Wine
-    wine
-    wine64
+    #wine 32-bit
+    #wine64
     winetricks
     wineWowPackages.waylandFull
   ];
@@ -239,8 +239,12 @@
 
   programs.git = {
     enable = true;
-    userName = "Jason Shi";
-    userEmail = "REDACTED";
+    settings = {
+      user = {
+        name = "Jason Shi";
+	email = "REDACTED";
+      };
+    };
   };
 
   gtk = {
