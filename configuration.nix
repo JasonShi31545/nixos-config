@@ -163,6 +163,9 @@
   # btrfs
   #services.btrfs.autoScrub.enable = true;
 
+  # SELinux security override (to make distrobox work)
+  security.lsm = pkgs.lib.mkForce [ ];
+
 
   services.dbus.enable = true;
   services.printing.enable = true;
