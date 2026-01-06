@@ -30,6 +30,11 @@
     slurp
     sway-contrib.grimshot
     shadowsocks-rust
+    # Wine
+    wine
+    wine64
+    winetricks
+    wineWowPackages.waylandFull
   ];
 
   home.sessionVariables = {

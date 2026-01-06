@@ -75,7 +75,7 @@
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "Asia/Singapore";
+  time.timeZone = "America/New_York";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
@@ -187,7 +187,19 @@
   # flatpak
   services.flatpak.enable = true;
 
+  # AppImages
 
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
+  # Udev
+
+  services.udev.extraRules = ''
+  SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", MODE:="0660", GROUP="input", TAG+="uaccess" 
+  SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", MODE:="0660", GROUP="input", TAG+="uaccess"
+  '';
 
   hardware.cpu.amd.updateMicrocode = true;
 
@@ -254,6 +266,7 @@
     mplus-outline-fonts.githubRelease
     dina-font
     proggyfonts
+    iosevka
   ] ++ builtins.filter pkgs.lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   # Enable Swaylock
