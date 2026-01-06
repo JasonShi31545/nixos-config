@@ -50,6 +50,9 @@
   # swappiness
   boot.kernel.sysctl."vm.swappiness" = 5;
 
+  # Some Kernel Modules
+  boot.kernelModules = [ "uinput" ];
+
   # Virtualisation
 
   virtualisation.containers.enable = true;
@@ -118,6 +121,8 @@
     enable = true;
     daemon.enable = true;
   };
+
+  hardware.uinput.enable = true;
 
   # Enable Bluetooth
   hardware.bluetooth = {
