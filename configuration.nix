@@ -286,12 +286,9 @@
   };
 
   # Systemd configs
-
-  systemd = {
-    extraConfig = ''
-      DefaultTimeoutStopSec=10s
-    '';
-  };
+  systemd.settings.Manager = {
+    DefaultTimeoutStopSec="10s"
+  }
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
