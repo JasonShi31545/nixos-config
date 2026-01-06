@@ -294,7 +294,7 @@ input * {
     xkb_layout us,us(intl)
 }
 
-output * bg ~/nix/nixos-config/dotfiles/resources/monaco.jpg fill
+output * bg ~/nix/nixos-config/dotfiles/resources/starry.jpg fill
 
 exec systemctl --user import-environment
 
