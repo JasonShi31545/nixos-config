@@ -78,7 +78,8 @@
 	    "warning": 15,
 	    "critical": 5
 	},
-	"format": "{capacity}%",
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""],
 	"max-length": 25
     },
     "pulseaudio": {
