@@ -9,7 +9,7 @@
 
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "cpu", "clock", "tray"],
+    "modules-right": ["pulseaudio", "network", "cpu", "battery", "clock", "tray"],
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -70,6 +70,16 @@
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "battery": {
+        "bat": "BAT0",
+	"interval": 60,
+	"states": {
+	    "warning": 15,
+	    "critical": 5
+	},
+	"format": "{capacity}%",
+	"max-length": 25
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
