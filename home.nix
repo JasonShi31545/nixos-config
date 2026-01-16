@@ -11,7 +11,6 @@
 
   home.packages = with pkgs; [
     distrobox
-    boxbuddy
     podman
     docker
     pcmanfm
