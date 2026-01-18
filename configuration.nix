@@ -298,13 +298,15 @@
   #  package = (pkgs.mesa.override { galliumDrivers = [ "i915" ]; }).drivers;
   };
 
-  # nVIDIA
+  # IMPORTANT!
+  # nVIDIA -- TODO: REMOVE IF NOT USING NVIDIA
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
   hardware.nvidia.prime = {
     intelBusId = "PCI:0@0:2:0";
     nvidiaBusId = "PCI:1@0:0:0";
   };
+  hardware.nvidia.modesetting.enable = true;
 
 
   # Systemd configs
