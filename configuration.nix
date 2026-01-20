@@ -21,14 +21,14 @@
   };
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  #boot.loader.systemd-boot.enable = true;
+  #boot.loader.grub.enable = true;
+  boot.loader.systemd-boot.enable = true;
   #boot.loader.grub.version = 2;
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.device = "nodev";
+  #boot.loader.grub.efiSupport = true;
+  #boot.loader.grub.device = "nodev";
   #boot.loader.grub.device = "/dev/vda";
-  boot.loader.grub.useOSProber = true;
-  #boot.loader.efi.canTouchEfiVariables = true;
+  #boot.loader.grub.useOSProber = true;
+  boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.gfxmodeEfi = "1024x768";
 
   # luks
@@ -177,7 +177,6 @@
 
   # xdg
   xdg = {
-    portal.config.common.default = "*";
     portal.enable = true;
     portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     terminal-exec.enable = true;
@@ -214,7 +213,7 @@
   # enable Wooting
   hardware.wooting.enable = true;
 
-  hardware.cpu.amd.updateMicrocode = true;
+  hardware.cpu.intel.updateMicrocode = true;
 
   security.rtkit.enable = true;
   services.pipewire = {
