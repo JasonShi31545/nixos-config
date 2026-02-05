@@ -50,6 +50,8 @@
   # FS
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
+  fileSystems."/boot".options = [ "umask=0077" "dmask=0077" "fmask=0077" ]; # Fix security
+
   # sysrq
   boot.kernel.sysctl."kernel.sysrq" = 502;
 
