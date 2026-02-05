@@ -254,6 +254,15 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Enable Proprietary Firmware/Hardware Drivers
+
+  hardware.enableRedistributableFirmware = true;
+  hardware.enableAllFirmware = true;
+
+  hardware.firmware = with pkgs; [
+    linux-firmware
+  ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
