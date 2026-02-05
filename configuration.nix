@@ -42,7 +42,7 @@
 
   boot.initrd.luks.devices."luksroot" = {
     # Root Partition
-    device = "/dev/disk/by-uuid/7a0b2fbb-d432-440b-ac5f-e7c701531527";
+    device = "/dev/disk/by-uuid/548c79a1-38fa-4cdb-8cf3-b8b75643900a";
     #preLVM = true; REMOVED DUE TO SYSTEMD
     allowDiscards = true;
   };
