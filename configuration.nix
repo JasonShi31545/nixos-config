@@ -21,15 +21,18 @@
   };
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  #boot.loader.systemd-boot.enable = true;
+  #boot.loader.grub.enable = true;
+  boot.loader.systemd-boot.enable = true;
   #boot.loader.grub.version = 2;
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.device = "nodev";
+  #boot.loader.grub.efiSupport = true;
+  #boot.loader.grub.device = "nodev";
   #boot.loader.grub.device = "/dev/vda";
-  boot.loader.grub.useOSProber = true;
-  #boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.gfxmodeEfi = "1024x768";
+  #boot.loader.grub.useOSProber = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  #boot.loader.grub.gfxmodeEfi = "1024x768";
+
+  # Latest Kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # luks
 
@@ -320,7 +323,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "25.11"; # Did you read the comment?
 
 
   # Auto update? Nah
