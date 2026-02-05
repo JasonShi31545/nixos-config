@@ -34,15 +34,19 @@
   # Latest Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # INITRD SystemD
+  boot.initrd.systemd.enable = true;
+
   # luks
 
-  #boot.initrd.luks.devices = {
-  #  luksroot = {
-  #    device = "/dev/disk/by-uuid/place-holder-uuid-for-root-cryptsetup-partition";
-  #    preLVM = true;
-  #    allowDiscards = true;
-  #  };
-  #};
+  boot.initrd.luks.devices = {
+    # Root Partition
+    luksroot = {
+      device = "/dev/disk/by-uuid/7a0b2fbb-d432-440b-ac5f-e7c701531527";
+      preLVM = true;
+      allowDiscards = true;
+    };
+  };
 
   # FS
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
