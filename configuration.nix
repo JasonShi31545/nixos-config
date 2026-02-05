@@ -23,6 +23,7 @@
   # Bootloader.
   #boot.loader.grub.enable = true;
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.graceful = true;
   #boot.loader.grub.version = 2;
   #boot.loader.grub.efiSupport = true;
   #boot.loader.grub.device = "nodev";
