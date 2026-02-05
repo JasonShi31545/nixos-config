@@ -39,13 +39,11 @@
 
   # luks
 
-  boot.initrd.luks.devices = {
+  boot.initrd.luks.devices."luksroot" = {
     # Root Partition
-    luksroot = {
-      device = "/dev/disk/by-uuid/7a0b2fbb-d432-440b-ac5f-e7c701531527";
-      preLVM = true;
-      allowDiscards = true;
-    };
+    device = "/dev/disk/by-uuid/7a0b2fbb-d432-440b-ac5f-e7c701531527";
+    #preLVM = true; REMOVED DUE TO SYSTEMD
+    allowDiscards = true;
   };
 
   # FS
