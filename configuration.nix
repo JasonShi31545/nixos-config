@@ -223,6 +223,7 @@
   hardware.wooting.enable = true;
 
   hardware.cpu.amd.updateMicrocode = true;
+  hardware.amdgpu.opencl.enable = true;
 
   security.rtkit.enable = true;
   services.pipewire = {
