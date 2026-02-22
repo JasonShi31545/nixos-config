@@ -228,6 +228,7 @@
       export PS1="──[\[\e[01;32m\]\u\[\e[00m\]@\[\e[01;32m\]\h\[\e[00m\]:\[\e[1;34m\]\W\[\e[0m\]]─╼ "
       export PATH="~/.local/bin:$PATH"
       export HISTCONTROL=erasedups:ignoreboth
+      export DOCKER_HOST=unix:///run/user/1000/docker.sock
     '';
   };
 
