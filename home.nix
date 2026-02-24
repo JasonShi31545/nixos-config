@@ -274,6 +274,12 @@
 
   xdg.configFile."sway/config".source = pkgs.lib.mkForce ./dotfiles/sway/config;
 
+  # Set my default browser for links
+  xdg.mimeApps.defaultApplications = {
+    "x-scheme-handler/https" = [ "org.mozilla.firefox.desktop" ]
+    "x-scheme-handler/https" = [ "org.mozilla.firefox.desktop" ]
+  };
+
 
 
 #  environment.etc = {
