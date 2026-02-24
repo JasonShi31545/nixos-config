@@ -276,8 +276,8 @@
 
   # Set my default browser for links
   xdg.mimeApps.defaultApplications = {
-    "x-scheme-handler/https" = [ "org.mozilla.firefox.desktop" ]
-    "x-scheme-handler/https" = [ "org.mozilla.firefox.desktop" ]
+    "x-scheme-handler/http" = [ "org.mozilla.firefox.desktop" ];
+    "x-scheme-handler/https" = [ "org.mozilla.firefox.desktop" ];
   };
 
 
