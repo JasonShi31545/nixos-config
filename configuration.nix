@@ -64,6 +64,7 @@
   # Virtualisation
 
   virtualisation.containers.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
   virtualisation.docker.rootless.enable = true;
  
   virtualisation.libvirtd.enable = true;
