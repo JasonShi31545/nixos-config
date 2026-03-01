@@ -59,7 +59,9 @@
   boot.kernel.sysctl."vm.swappiness" = 5;
 
   # Some Kernel Modules
-  boot.kernelModules = [ "uinput" ];
+  # uinput for tablet
+  # v4l2loopback and snd-aloop for streaming
+  boot.kernelModules = [ "uinput" "v4l2loopback" "snd-aloop" ];
 
   # Virtualisation
 
