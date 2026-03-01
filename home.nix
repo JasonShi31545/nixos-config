@@ -36,6 +36,7 @@
     wineWowPackages.waylandFull
     # OBS
     qpwgraph
+    pavucontrol
   ];
 
   home.sessionVariables = {
