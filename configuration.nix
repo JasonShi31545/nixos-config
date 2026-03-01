@@ -125,6 +125,10 @@
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
 
+  # OBS Setup (for streaming)
+  programs.obs-studio.enable = true;
+  programs.obs-studio.enableVirtualCamera = true;
+
   # Enable OpenTabletDriver
   hardware.opentabletdriver = {
     enable = true;

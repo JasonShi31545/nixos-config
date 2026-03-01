@@ -34,6 +34,8 @@
     #wine64
     winetricks
     wineWowPackages.waylandFull
+    # OBS
+    qpwgraph
   ];
 
   home.sessionVariables = {
@@ -299,6 +301,7 @@
 #  };
 
 
+  
 
   home.stateVersion = "24.05";
 }
