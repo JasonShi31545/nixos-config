@@ -37,6 +37,9 @@
     # OBS
     qpwgraph
     pavucontrol
+    # Network tools
+    nmgui
+    networkmanagerapplet
   ];
 
   home.sessionVariables = {
