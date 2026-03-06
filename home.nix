@@ -257,7 +257,9 @@
       enable = true;
       theme.name = "Rayleigh";
       cursorTheme.name = "Adwaita";
-      iconTheme.name = "nuoveXT2";
+      #iconTheme.name = "nuoveXT2";
+      iconTheme.name = "Adwaita";
+      iconTheme.package = pkgs.adwaita-icon-theme;
   };
 
 
