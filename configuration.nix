@@ -13,11 +13,13 @@
   ];
 
   home-manager = {
-      extraSpecialArgs = { inherit inputs; };
-      backupFileExtension = "bak";
-      users = {
-        jason = import ./home.nix;
-      };
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs; };
+    backupFileExtension = "bak";
+    users = {
+      jason = import ./home.nix;
+    };
   };
 
   # Bootloader.
@@ -84,6 +86,9 @@
 
   # default terminal editor
   environment.variables.EDITOR = "nvim";
+
+  #environment.sessionVariables = {
+  #};
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -160,9 +165,7 @@
 
 
   # light
-  programs.light = {
-    enable = true;
-  };
+  hardware.acpilight.enable = true;
 
   # polkit
   security.polkit.enable = true;

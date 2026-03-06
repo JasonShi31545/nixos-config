@@ -14,7 +14,6 @@
     podman
     docker
     pcmanfm
-    #lxappearance
     tldr
     btrfs-progs
     rsync
@@ -28,12 +27,18 @@
     killall
     slurp
     sway-contrib.grimshot
-    shadowsocks-rust
+    procps
+    xdg-utils
+
+	
+    # More Theming
+    qt6.qtwayland
+    qt5.qtwayland
+
+
     # Wine
-    #wine 32-bit
-    #wine64
     winetricks
-    wineWowPackages.waylandFull
+    wineWow64Packages.waylandFull
     # OBS
     qpwgraph
     pavucontrol
@@ -43,6 +48,16 @@
   ];
 
   home.sessionVariables = {
+    XDG_CURRENT_DESKTOP = "sway";
+    XDG_SESSION_DESKTOP = "sway";
+    XDG_SESSION_TYPE = "wayland";
+    GTK_BACKEND = "wayland";
+    GTK_USE_PORTAL = "1";
+    QT_QPA_PLATFORMTHEME = "qt5ct";
+    QT_QPA_PLATFORM = "wayland";
+    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+    MOZ_ENABLE_WAYLAND = "1";
   };
 
   # Put all the paths of the sources of my configuration files in this setting.
@@ -253,14 +268,38 @@
     };
   };
 
-  gtk = {
-      enable = true;
-      theme.name = "Rayleigh";
-      cursorTheme.name = "Adwaita";
-      #iconTheme.name = "nuoveXT2";
-      iconTheme.name = "Adwaita";
-      iconTheme.package = pkgs.adwaita-icon-theme;
+  # THEMING
+  
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.posy-cursors;
+    name = "Posy_Cursor_Black";
+    size = 15;
   };
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita";
+      #package = pkgs.xxx;
+    };
+    iconTheme = {
+      name = "tango";
+      package = pkgs.tango-icon-theme;
+    };
+  };
+
+
+  qt = {
+    enable = true;
+    #platformTheme.name = "gtk";
+    platformTheme = "qtct";
+    style = {
+      package = pkgs.adwaita-qt;
+      name = "adwaita";
+    };
+  };
+
 
 
   xresources.path = ".bad/.Xresources.bak";
