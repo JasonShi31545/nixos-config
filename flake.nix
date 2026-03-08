@@ -14,6 +14,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Secure Boot (Not Enabled Now)
+    #lanzaboote = {
+    #  url = "github:nix-community/lanzaboote/v1.0.0";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
 
   outputs = { self, nixpkgs, home-manager, ...}@inputs:
@@ -25,6 +31,7 @@
         default = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs system; };
           modules = [
+	    # lanzaboote.nixosModules.lanzaboote
 	    {
 	      nixpkgs.config.allowUnfree = true;
 	    }

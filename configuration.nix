@@ -34,6 +34,17 @@
   boot.loader.efi.canTouchEfiVariables = true;
   #boot.loader.grub.gfxmodeEfi = "1024x768";
 
+  # Secure boot (disabled)
+  #boot.loader.systemd-boot.enable = pkgs.lib.mkForce false;
+  #boot.lanzaboote = {
+  #  enable = true;
+  #  pkiBundle = "/var/lib/sbctl";
+  #  autoGenerateKeys.enable = true;
+  #  autoEnrollKeys.enable = true;
+  #  autoEnrollKey.autoReboot = true;
+  #};
+
+
   # Latest Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -280,6 +291,7 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
     home-manager
+    # sbctl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
