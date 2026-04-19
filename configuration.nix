@@ -76,6 +76,12 @@
   # v4l2loopback and snd-aloop for streaming
   boot.kernelModules = [ "uinput" "v4l2loopback" "snd-aloop" ];
 
+  # udisks (user level storage)
+
+  services.udisks2 = {
+    enable = true;
+  };
+
   # Virtualisation
 
   virtualisation.containers.enable = true;
@@ -266,7 +272,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jason = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "video" "storage" ];
     initialPassword = "default";
   };
 
