@@ -143,9 +143,11 @@
     enable = true;
   };
 
-  programs.neovim.vimAlias = true;
   programs.neovim = {
       enable = true;
+      vimAlias = true;
+      withRuby = true;
+      withPython3 = true;
       #extraConfig = ''
       #  #" set autoindent
       #  set wrap
@@ -260,6 +262,7 @@
 
   programs.git = {
     enable = true;
+    signing.format = "openpgp";
     settings = {
       user = {
         name = "Jason Shi";
@@ -287,13 +290,16 @@
       name = "tango";
       package = pkgs.tango-icon-theme;
     };
+    gtk4.theme = {
+      name = "Adwaita";
+    };
   };
 
 
   qt = {
     enable = true;
     #platformTheme.name = "gtk";
-    platformTheme = "qtct";
+    platformTheme.name = "qtct";
     style = {
       package = pkgs.adwaita-qt;
       name = "adwaita";
@@ -308,6 +314,7 @@
   xdg = {
 
     userDirs.enable = true;
+    userDirs.setSessionVariables = true;
     userDirs.desktop = "${config.home.homeDirectory}/desk";
     userDirs.documents = "${config.home.homeDirectory}/docs";
     userDirs.download = "${config.home.homeDirectory}/downloads";
