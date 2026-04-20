@@ -89,7 +89,10 @@
   virtualisation.spiceUSBRedirection.enable = true;
   virtualisation.docker.rootless.enable = true;
  
-  virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu.swtpm.enable = true;
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
