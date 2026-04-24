@@ -29,6 +29,7 @@
     sway-contrib.grimshot
     procps
     xdg-utils
+    waypipe # access vm wayland gui apps
 
 	
     # More Theming
