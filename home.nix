@@ -46,6 +46,8 @@
     # Network tools
     nmgui
     networkmanagerapplet
+    # Virtual Machine File Sharing
+    virtiofsd
   ];
 
   home.sessionVariables = {
