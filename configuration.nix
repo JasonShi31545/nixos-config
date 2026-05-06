@@ -211,6 +211,10 @@
   # SELinux security override (to make distrobox work)
   security.lsm = pkgs.lib.mkForce [ ];
 
+  # FireJail
+  programs.firejail.enable = true;
+  # programs.firejail.wrappedBinaries
+
 
   services.dbus.enable = true;
   services.printing.enable = true;

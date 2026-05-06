@@ -10,9 +10,12 @@
   home.homeDirectory = "/home/jason";
 
   home.packages = with pkgs; [
+    # dev envs
     distrobox
     podman
     docker
+
+    # utils
     pcmanfm
     tldr
     btrfs-progs
@@ -31,12 +34,9 @@
     xdg-utils
     waypipe # access vm wayland gui apps
 
-	
     # More Theming
     qt6.qtwayland
     qt5.qtwayland
-
-
     # Wine
     winetricks
     wineWow64Packages.waylandFull
@@ -48,6 +48,8 @@
     networkmanagerapplet
     # Virtual Machine File Sharing
     virtiofsd
+    # bubblewrap (Security)
+    bubblewrap
   ];
 
   home.sessionVariables = {
