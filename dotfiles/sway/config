@@ -25,7 +25,8 @@ set $term footclient
 # Shows a combined list of the applications with desktop files and
 # executables from PATH.
 #set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
-set $menu rofi -font "CaskaydiaMono NF 12" -show drun
+#set $menu rofi -font "CaskaydiaMono NF 12" -show drun
+set $menu rofi -show drun -theme ~/.config/rofi/theme.rasi
 
 #font
 font pango:"CaskaydiaMono NF" Regular 10
@@ -85,7 +86,7 @@ font pango:"CaskaydiaMono NF" Regular 10
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+d exec --no-startup-id $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
