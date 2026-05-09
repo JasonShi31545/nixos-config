@@ -58,7 +58,9 @@
     XDG_SESSION_TYPE = "wayland";
     GTK_BACKEND = "wayland";
     GTK_USE_PORTAL = "1";
+    GTK_THEME = "Ambiance";
     QT_QPA_PLATFORMTHEME = "qt5ct";
+    QT_STYLE_OVERRIDE = "kvantum";
     QT_QPA_PLATFORM = "wayland";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
@@ -288,15 +290,20 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Adwaita";
-      #package = pkgs.xxx;
+      name = "Ambiance";
+      package = pkgs.ubuntu-themes;
     };
     iconTheme = {
-      name = "tango";
-      package = pkgs.tango-icon-theme;
+      name = "Humanity";
+      package = pkgs.humanity-icon-theme;
+    };
+    font = {
+      name = "Ubuntu";
+      package = pkgs.ubuntu-sans;
+      size = 11;
     };
     gtk4.theme = {
-      name = "Adwaita";
+      name = "Ambiance";
     };
   };
 
@@ -306,8 +313,36 @@
     #platformTheme.name = "gtk";
     platformTheme.name = "qtct";
     style = {
-      package = pkgs.adwaita-qt;
-      name = "adwaita";
+      package = pkgs.kdePackages.qtstyleplugin-kvantum;
+      name = "kvantum";
+    };
+  };
+
+  xdg.configFile."Kvantum/kvantum.kvconfig".text = ''
+    [General]
+    theme=KvAmbiance
+  '';
+
+  qt.qt5ctSettings = {
+    Appearance = {
+      style = "kvantum";
+      icon_theme = "Humanity";
+      standard_dialogs = "default";
+    };
+    Fonts = {
+      general = "\"Ubuntu,11,-1,5,50,0,0,0,0,0\"";
+      fixed = "\"Ubuntu Mono,11,-1,5,50,0,0,0,0,0\"";
+    };
+  };
+  qt.qt6ctSettings = {
+    Appearance = {
+      style = "kvantum";
+      icon_theme = "Humanity";
+      standard_dialogs = "default";
+    };
+    Fonts = {
+      general = "\"Ubuntu,11,-1,5,50,0,0,0,0,0\"";
+      fixed = "\"Ubuntu Mono,11,-1,5,50,0,0,0,0,0\"";
     };
   };
 
