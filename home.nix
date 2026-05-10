@@ -40,6 +40,9 @@
     # More Theming
     qt6.qtwayland
     qt5.qtwayland
+    # pkgs.kdePackages.qtstyleplugin-kvantum (already satisfied below)
+    libsForQt5.qtstyleplugin-kvantum
+    libsForQt5.qtstyleplugins
     # Wine
     winetricks
     wineWow64Packages.waylandFull
