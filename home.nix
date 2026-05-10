@@ -287,8 +287,8 @@
   
   home.pointerCursor = {
     gtk.enable = true;
-    package = pkgs.posy-cursors;
-    name = "Posy_Cursor_Black";
+    package = pkgs.apple-cursor;
+    name = "macOS White";
     size = 6;
   };
 
