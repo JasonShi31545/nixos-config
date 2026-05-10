@@ -34,6 +34,9 @@
     xdg-utils
     waypipe # access vm wayland gui apps
 
+    # more utils
+    powertop
+
     # More Theming
     qt6.qtwayland
     qt5.qtwayland
@@ -73,7 +76,9 @@
       ".config/conky/conky.conf".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/conky/conky.conf;
       ".config/foot/foot.ini".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/foot/foot.ini;
       #".config/nvim/init.vim".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/nvim/init.vim;
-      ".config/rofi/config.rasi".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/rofi/config.rasi;
+      ".config/rofi/theme.rasi".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/rofi/theme.rasi;
+      ".config/rofi/colors.rasi".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/rofi/colors.rasi;
+      ".config/rofi/fonts.rasi".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/rofi/fonts.rasi;
       #".config/sway/config.ref".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/sway/config;
       ".config/swaylock/config".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/swaylock/config;
       ".config/waybar/config".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/waybar/config;
