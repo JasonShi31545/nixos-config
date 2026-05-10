@@ -288,8 +288,8 @@
   home.pointerCursor = {
     gtk.enable = true;
     package = pkgs.apple-cursor;
-    name = "macOS White";
-    size = 6;
+    name = "macOS-White";
+    size = 8;
   };
 
   gtk = {
