@@ -110,7 +110,7 @@
 
 
   wayland.windowManager.sway = {
-    #package = pkgs.swayfx;
+    package = pkgs.swayfx;
     enable = true;
     wrapperFeatures.gtk = true;
     #extraConfigEarly = "include ~/.config/sway/config.ref";
