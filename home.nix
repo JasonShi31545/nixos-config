@@ -34,6 +34,9 @@
     xdg-utils
     waypipe # access vm wayland gui apps
 
+    # for miracle-wm
+    swaybg
+
     # more utils
     powertop
 
@@ -108,7 +111,6 @@
   };
 
 
-
   wayland.windowManager.sway = {
     package = pkgs.swayfx;
     enable = true;
@@ -129,6 +131,10 @@
   programs.rofi = {
     enable = true;
     configPath = ".bad/rofi-backup/config.rasi";
+  };
+
+  programs.wofi = {
+    enable = true;
   };
 
   services.network-manager-applet = {
