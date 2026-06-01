@@ -76,6 +76,21 @@
   # v4l2loopback and snd-aloop for streaming
   boot.kernelModules = [ "uinput" "v4l2loopback" "snd-aloop" ];
 
+  # Kernel params
+  #boot.kernelParams = [
+  #  "amd_iommu=on"
+  #  "vfio-pci.ids=1002:731f,1002:1640"
+  #];
+
+  # initrd
+
+  #boot.initrd.kernelModules = [
+  #  "vfio_pci"
+  #  "vfio"
+  #  "vfio_iommu_type1"
+
+  #];
+
   # udisks (user level storage)
 
   services.udisks2 = {
@@ -93,6 +108,7 @@
     enable = true;
     qemu.swtpm.enable = true;
     qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
+    qemu.package = pkgs.qemu_kvm;
   };
 
   networking.hostName = "nixos"; # Define your hostname.
