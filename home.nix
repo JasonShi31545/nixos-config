@@ -33,8 +33,6 @@
     procps
     xdg-utils
     waypipe # access vm wayland gui apps
-
-    # for miracle-wm
     swaybg
 
     # more utils

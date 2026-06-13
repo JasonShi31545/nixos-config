@@ -356,8 +356,8 @@
   # Enable Swaylock
   security.pam.services.swaylock = {};
 
-  # Enable miracle (config later)
-  programs.wayland.miracle-wm.enable = true;
+  # Enable miracle
+  # programs.wayland.miracle-wm.enable = true;
  
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [];
