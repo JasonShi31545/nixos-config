@@ -112,7 +112,6 @@
   };
 
   networking.hostName = "nixos"; # Define your hostname.
-  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # OpenVPN
 
@@ -130,8 +129,9 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.wireless.iwd.enable = true;
-  networking.networkmanager.wifi.backend = "iwd";
+  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  #networking.wireless.iwd.enable = true;
+  #networking.networkmanager.wifi.backend = "iwd";
 
   # Set your time zone.
   time.timeZone = "America/New_York";
