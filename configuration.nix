@@ -151,8 +151,8 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  i18n.inputMethod.enable = true;
-  i18n.inputMethod.type = "ibus";
+  #i18n.inputMethod.enable = true;
+  #i18n.inputMethod.type = "ibus";
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
