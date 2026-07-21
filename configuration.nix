@@ -154,6 +154,33 @@
   #i18n.inputMethod.enable = true;
   #i18n.inputMethod.type = "ibus";
 
+  i18n.inputMethod = {
+    type = "fcitx5";
+    enable = true;
+    fcitx5 = {
+      waylandFrontend = true;
+      ignoreUserConfig = true;
+      addons = with pkgs; [
+        fcitx5-gtk
+        qt6Packages.fcitx5-chinese-addons #fcitx5-chinese-addons
+        fcitx5-chewing
+        fcitx5-rime
+        rime-data
+        fcitx5-nord
+      ];
+      settings.inputMethod = {
+        "Groups/0" = {
+	  Name = "Default";
+	  "Default Layout" = "gb";
+	  DefaultIM = "keyboard-gb";
+	};
+	"Groups/0/Items/0".Name = "keyboard-gb";
+	"Groups/0/Items/1".Name = "pinyin";
+	"Groups/0/Items/2".Name = "chewing";
+      };
+    };
+  };
+
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
   # Configure keymap in X11
