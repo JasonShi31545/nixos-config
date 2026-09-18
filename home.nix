@@ -59,7 +59,7 @@
     XDG_SESSION_TYPE = "wayland";
     GTK_BACKEND = "wayland";
     GTK_USE_PORTAL = "1";
-    GTK_THEME = "Yaru";
+    GTK_THEME = "Fluent";
     QT_QPA_PLATFORMTHEME = "";
     QT_STYLE_OVERRIDE = "Fusion";
     MOZ_ENABLE_WAYLAND = "1";
@@ -288,21 +288,18 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Yaru";
-      #package = pkgs.ubuntu-themes;
-      package = pkgs.yaru-theme;
+      name = "Fluent";
+      package = pkgs.fluent-gtk-theme;
     };
     iconTheme = {
-      name = "Humanity";
-      package = pkgs.humanity-icon-theme;
+      name = "Fluent";
+      package = pkgs.fluent-icon-theme;
     };
     font = {
       name = "Ubuntu";
-      package = pkgs.ubuntu-sans;
+      package = pkgs.ubuntu-sans; # we can keep ubuntu fonts
+      				  # until a better one is found
       size = 11;
-    };
-    gtk4.theme = {
-      name = "Yaru";
     };
   };
 
@@ -353,5 +350,5 @@
 
   
 
-  home.stateVersion = "24.05";
+  home.stateVersion = "26.05";
 }
