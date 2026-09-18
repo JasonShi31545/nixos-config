@@ -57,11 +57,7 @@
     XDG_CURRENT_DESKTOP = "sway";
     XDG_SESSION_DESKTOP = "sway";
     XDG_SESSION_TYPE = "wayland";
-    GTK_BACKEND = "wayland";
     GTK_USE_PORTAL = "1";
-    GTK_THEME = "Fluent";
-    QT_QPA_PLATFORMTHEME = "";
-    QT_STYLE_OVERRIDE = "Fusion";
     MOZ_ENABLE_WAYLAND = "1";
   };
 
@@ -288,12 +284,12 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Fluent";
-      package = pkgs.fluent-gtk-theme;
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
     };
     iconTheme = {
-      name = "Fluent";
-      package = pkgs.fluent-icon-theme;
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
     };
     font = {
       name = "Ubuntu";
@@ -301,6 +297,12 @@
       				  # until a better one is found
       size = 11;
     };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk3";
+    style.name = "adwaita-dark";
   };
 
   xresources.path = ".bad/.Xresources.bak";
