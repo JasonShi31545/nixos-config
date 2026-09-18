@@ -240,7 +240,7 @@
 
   # polkit
   security.polkit.enable = true;
-  security.polkit.debug = true;
+  #security.polkit.debug = true;
 
   # sudo
   security.sudo.configFile = ''
@@ -395,7 +395,7 @@
     mplus-outline-fonts.githubRelease
     dina-font
     proggyfonts
-    iosevka
+    #iosevka
   ] ++ builtins.filter pkgs.lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   # Enable Swaylock

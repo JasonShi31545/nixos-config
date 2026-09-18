@@ -38,12 +38,6 @@
     # more utils
     powertop
 
-    # More Theming
-    qt6.qtwayland
-    qt5.qtwayland
-    # pkgs.kdePackages.qtstyleplugin-kvantum (already satisfied below)
-    libsForQt5.qtstyleplugin-kvantum
-    libsForQt5.qtstyleplugins
     # Wine
     winetricks
     wineWow64Packages.waylandFull
@@ -65,12 +59,9 @@
     XDG_SESSION_TYPE = "wayland";
     GTK_BACKEND = "wayland";
     GTK_USE_PORTAL = "1";
-    GTK_THEME = "Ambiance";
-    QT_QPA_PLATFORMTHEME = "qt5ct";
-    QT_STYLE_OVERRIDE = "kvantum";
-    QT_QPA_PLATFORM = "wayland";
-    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+    GTK_THEME = "Yaru";
+    QT_QPA_PLATFORMTHEME = "";
+    QT_STYLE_OVERRIDE = "Fusion";
     MOZ_ENABLE_WAYLAND = "1";
   };
 
@@ -115,12 +106,6 @@
     wrapperFeatures.gtk = true;
     #extraConfigEarly = "include ~/.config/sway/config.ref";
   };
-
-  #programs.sway = {
-  #  package = pkg.swayfx;
-  #  enable = true;
-  #  wrapperFeatuers.gtk = true;
-  #};
 
   programs.swaylock = {
     enable = true;
@@ -293,6 +278,7 @@
   # THEMING
   
   home.pointerCursor = {
+    enable = true;
     gtk.enable = true;
     package = pkgs.apple-cursor;
     name = "macOS-White";
@@ -302,8 +288,9 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Ambiance";
-      package = pkgs.ubuntu-themes;
+      name = "Yaru";
+      #package = pkgs.ubuntu-themes;
+      package = pkgs.yaru-theme;
     };
     iconTheme = {
       name = "Humanity";
@@ -315,46 +302,7 @@
       size = 11;
     };
     gtk4.theme = {
-      name = "Ambiance";
-    };
-  };
-
-
-  qt = {
-    enable = true;
-    #platformTheme.name = "gtk";
-    platformTheme.name = "qtct";
-    style = {
-      package = pkgs.kdePackages.qtstyleplugin-kvantum;
-      name = "kvantum";
-    };
-  };
-
-  xdg.configFile."Kvantum/kvantum.kvconfig".text = ''
-    [General]
-    theme=KvAmbiance
-  '';
-
-  qt.qt5ctSettings = {
-    Appearance = {
-      style = "kvantum";
-      icon_theme = "Humanity";
-      standard_dialogs = "default";
-    };
-    Fonts = {
-      general = "\"Ubuntu,11,-1,5,50,0,0,0,0,0\"";
-      fixed = "\"Ubuntu Mono,11,-1,5,50,0,0,0,0,0\"";
-    };
-  };
-  qt.qt6ctSettings = {
-    Appearance = {
-      style = "kvantum";
-      icon_theme = "Humanity";
-      standard_dialogs = "default";
-    };
-    Fonts = {
-      general = "\"Ubuntu,11,-1,5,50,0,0,0,0,0\"";
-      fixed = "\"Ubuntu Mono,11,-1,5,50,0,0,0,0,0\"";
+      name = "Yaru";
     };
   };
 
