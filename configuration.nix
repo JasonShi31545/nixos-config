@@ -272,7 +272,10 @@
   xdg = {
     portal.config.common.default = "*";
     portal.enable = true;
-    portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    portal.extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-wlr
+    ];
     terminal-exec.enable = true;
     terminal-exec.settings = {
         default = [
