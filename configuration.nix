@@ -270,7 +270,7 @@
 
   # xdg
   xdg = {
-    portal.config.common.default = "*";
+    portal.config.common.default = [ "wlr" "gtk" ];
     portal.enable = true;
     portal.extraPortals = [
       pkgs.xdg-desktop-portal-gtk
@@ -284,6 +284,12 @@
     };
     portal.xdgOpenUsePortal = true;
     portal.wlr.enable = true;
+    portal.wlr.settings = {
+      screencast = {
+        chooser_type = "simple";
+	chooser_cmd = "${pkgs.slurp}/bin/slurp -f %o -or";
+      };
+    };
     mime.defaultApplications = {
         "image/*" = ["imv-wayland"];
         "video/*" = ["mpv.desktop"];
