@@ -58,6 +58,8 @@
     XDG_SESSION_DESKTOP = "sway";
     XDG_SESSION_TYPE = "wayland";
     MOZ_ENABLE_WAYLAND = "1";
+    GTK_BACKEND = "wayland";
+    GTK_USE_PORTAL = "1";
   };
 
   # Put all the paths of the sources of my configuration files in this setting.
@@ -296,6 +298,7 @@
       				  # until a better one is found
       size = 11;
     };
+    gtk4.theme = config.gtk.theme; # so my home manager does not complain
   };
 
   qt = {
@@ -351,5 +354,5 @@
 
   
 
-  home.stateVersion = "26.05";
+  home.stateVersion = "24.05";
 }
