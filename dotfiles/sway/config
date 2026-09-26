@@ -297,7 +297,7 @@ input * {
 
 output * bg ~/nix/nixos-config/dotfiles/resources/starry.jpg fill
 
-exec systemctl --user import-environment
+#exec systemctl --user import-environment
 
 # exec_always killall swayidle
 # exec_always swayidle -w \

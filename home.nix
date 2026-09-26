@@ -67,11 +67,9 @@
       ".gitconfig".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/git/gitconfig;
       ".config/conky/conky.conf".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/conky/conky.conf;
       ".config/foot/foot.ini".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/foot/foot.ini;
-      #".config/nvim/init.vim".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/nvim/init.vim;
       ".config/rofi/theme.rasi".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/rofi/theme.rasi;
       ".config/rofi/colors.rasi".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/rofi/colors.rasi;
       ".config/rofi/fonts.rasi".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/rofi/fonts.rasi;
-      #".config/sway/config.ref".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/sway/config;
       ".config/swaylock/config".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/swaylock/config;
       ".config/waybar/config".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/waybar/config;
       ".config/waybar/style.css".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/waybar/style.css;
@@ -101,7 +99,10 @@
     package = pkgs.swayfx;
     enable = true;
     wrapperFeatures.gtk = true;
+    checkConfig = false;
     #extraConfigEarly = "include ~/.config/sway/config.ref";
+    config = null;
+    extraConfig = builtins.readFile ./dotfiles/sway/config;
   };
 
   programs.swaylock = {
@@ -125,9 +126,9 @@
     enable = true;
   };
 
-  services.kanshi = {
-    enable = true;
-  };
+  #services.kanshi = { # Kanshi is not needed for now
+  #  enable = true;
+  #};
 
   services.conky = {
     enable = true;
@@ -181,14 +182,6 @@
       set -g mouse on
     '';
   };
-
-
-
-
-
-
-
-## NAH, put emacs under container, easier since doom is already declarative anyways
 
 ##  programs.emacs = {
 ##    enable = true;
@@ -325,8 +318,6 @@
 
   };
 
-  xdg.configFile."sway/config".source = pkgs.lib.mkForce ./dotfiles/sway/config;
-
   # Set my default browser for links
   # among other things
   xdg.mimeApps.defaultApplications = {
@@ -336,23 +327,6 @@
     "application/pdf" = [ "org.mozilla.firefox.desktop" ];
   };
 
-
-
-#  environment.etc = {
-#      "xdg/user-dirs.dirs".text = ''
-#        XDG_DOCUMENTS_DIR="$HOME/docs"
-#        XDG_DOWNLOAD_DIR="$HOME/downloads"
-#        XDG_MUSIC_DIR="$HOME/music"
-#        XDG_PICTURES_DIR="$HOME/media"
-#        XDG_PUBLICSHARE_DIR="$HOME/pub"
-#        XDG_TEMPLATES_DIR="$HOME/templates"
-#        XDG_VIDEOS_DIR="$HOME/videos"
-#        XDG_DESKTOP_DIR="$HOME/desk"
-#      '';
-#  };
-
-
-  
 
   home.stateVersion = "24.05";
 }
