@@ -88,6 +88,9 @@
       autoconnect = ["qemu:///system"];
       uris = ["qemu:///system"];
     };
+    "org/gnome/desktop/interface" = {
+      gtk-theme = "Skeuos-Black-Light";
+    };
   };
 
   programs.waybar = {
@@ -277,14 +280,14 @@
 
   gtk = {
     enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
-    };
-    iconTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
-    };
+    #theme = {
+    #  name = "Adwaita-dark";
+    #  package = pkgs.gnome-themes-extra;
+    #};
+    #iconTheme = {
+    #  name = "Adwaita";
+    #  package = pkgs.adwaita-icon-theme;
+    #};
     font = {
       name = "Ubuntu";
       package = pkgs.ubuntu-sans; # we can keep ubuntu fonts
