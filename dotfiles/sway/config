@@ -164,11 +164,11 @@ gaps outer 1
 default_border pixel 2
 
 #client.focused "#872121" "#872121" "#ffffff" "#ff2222" "#872121"
-client.focused "#03FCD7" "#03FCD7" "#ffffff" "#15358D" "#03FCD7"
+client.focused "#22AEF0" "#22AEF0" "#ffffff" "#15358D" "#22AEF0"
 
 #smart_gaps on
 smart_borders on
-hide_edge_borders both
+#hide_edge_borders both
 #titlebar_border_thickness 1
 #titlebar_padding 0
 #for_window [class="^.*"] title_format "%title <i>%class</i> %instance %shell"
