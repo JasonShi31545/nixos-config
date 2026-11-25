@@ -60,6 +60,16 @@
     MOZ_ENABLE_WAYLAND = "1";
     GTK_BACKEND = "wayland";
     GTK_USE_PORTAL = "1";
+
+    FREETYPE_PROPERTIES="truetype:interpreter-version=35";
+    GTK_OVERLAY_SCROLLING="0";
+    GTK_BACKDROP="1";
+    GTKM_INSERT_EMOJI="1";
+    GTK_USE_IEC_UNITS="1";
+    GTK_FOCUS_VISIBLE="1";
+    GTK_PROGRESS_TEXT_INSIDE="1";
+    GTK_TREEVIEW_LINES="0";
+    GTK_ENLARGE_SCROLLBAR="1";
   };
 
   # Put all the paths of the sources of my configuration files in this setting.
@@ -89,7 +99,8 @@
       uris = ["qemu:///system"];
     };
     "org/gnome/desktop/interface" = {
-      gtk-theme = "Skeuos-Black-Light";
+      #gtk-theme = "Skeuos-Black-Light";
+      gtk-theme = "Ambiance";
     };
   };
 
@@ -284,10 +295,10 @@
     #  name = "Adwaita-dark";
     #  package = pkgs.gnome-themes-extra;
     #};
-    #iconTheme = {
-    #  name = "Adwaita";
-    #  package = pkgs.adwaita-icon-theme;
-    #};
+    iconTheme = {
+      name = "Humanity";
+      package = pkgs.humanity-icon-theme;
+    };
     font = {
       name = "Ubuntu";
       package = pkgs.ubuntu-sans; # we can keep ubuntu fonts
@@ -300,7 +311,7 @@
   qt = {
     enable = true;
     platformTheme.name = "gtk3";
-    style.name = "adwaita-dark";
+    #style.name = "adwaita-dark";
   };
 
   xresources.path = ".bad/.Xresources.bak";
