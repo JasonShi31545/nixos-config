@@ -258,7 +258,7 @@ gaps outer 1
 default_border pixel 3
 
 #client.focused "#872121" "#872121" "#ffffff" "#ff2222" "#872121"
-client.focused "#00004D" "#00004D" "#ffffff" "#15358D" "#00004D"
+client.focused "#6B1B02" "#6B1B02" "#ffffff" "#DBB82C" "#6B1B02"
 
 #smart_gaps on
 smart_borders on
