@@ -5,6 +5,7 @@
 }
 
 window#waybar {
+
     background-color: rgba(43, 48, 59, 0.02);
 
     padding-bottom: 3px;
@@ -47,20 +48,19 @@ button:hover {
 }
 
 #workspaces button.focused {
-    background-color: #44B4F8;
+    background-color: #F8AA44;
     /*box-shadow: inset 0 -3px #ffffff;*/
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: #E6211E;
 }
 
 #mode {
-    background-color: #64727D;
+    background-color: #7D7964;
     /*border-bottom: 3px solid #ffffff;*/
 }
-
-#clock,
+/*
 #battery,
 #cpu,
 #network,
@@ -94,7 +94,7 @@ button:hover {
 #clock {
     border-radius: 10px;
     color: black;
-    background-color: #44B4F8;
+    background-color: #F8AA44;
     margin: 0 5px;
 }
 
@@ -111,14 +111,14 @@ label:focus {
 
 #cpu {
     border-radius: 10px;
-    background-color: #44B4F8;
+    background-color: #F8AA44;
     color: black;
     margin: 0 5px;
 }
 
 #network {
     color: black;
-    background-color: #44F8EC;
+    background-color: #F8CB44;
     border-radius: 10px;
     margin: 0 5px;
 }
@@ -131,20 +131,20 @@ label:focus {
 
 #pulseaudio {
     border-radius: 10px;
-    background-color: #44B4F8;
+    background-color: #F8AA44;
     color: black;
     margin: 0 5px;
 }
 
 #pulseaudio.muted {
     border-radius: 10px;
-    background-color: #90b1b1;
+    background-color: #A9B190;
     color: #2a5c45;
     margin: 0 5px;
 }
 
 #tray {
-    background-color: #44F8EC;
+    background-color: #F8CB44;
     border-radius: 5px;
     margin: 0 5px;
 }
